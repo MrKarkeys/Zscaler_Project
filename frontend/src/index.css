@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+.dropdown{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  position: fixed;
+  top: 0px;
+  right: 185px;
+  height: 20px;
+  z-index: 1;
+  background-color: white;
+}
+
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #009CAD;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #000000;
+  --error: #000000;
+}
+body {
+  background: #FFFFFF;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #000000;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #000000;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.nav {
+    list-style: none;
+    text-align: center;
+    padding: 100;
+    margin: 50;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    background-color: #F1f1f1;
+    position: fixed;
+    top: 0;
+    width: 1000;
+  }
+
+  .navbar{
+
+    list-style: none;
+    text-align: center;
+    padding: 100;
+    margin: 50;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0px;
+    height: 65px;
+  }
+
+  .logo{
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 10px;
+    right: 100px;
+  }
+
+.logoutbutton{
+  top: 0px;
+  right: 10px;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  margin-top: 10px;
+  position: fixed;
+  list-style: none;
+}
+.profilebutton{
+  top: 0px;
+  right: 100px;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  margin-top: 10px;
+  position: fixed;
+  list-style: none;
+}
+

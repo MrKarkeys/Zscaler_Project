@@ -20,31 +20,35 @@ public class dlp_control {
             DELETE - "/delete/dlp/{id}"
     */
    
-    @GetMapping(value = "/get/dlp")
-    public List<dlp> getDLPPols(){
-        return dlpREP.findAll();
+    // @GetMapping(value = "/get/dlp")
+    // public List<dlp> getDLPPols(){
+    //     return dlpREP.findAll();
+    // }
+
+    @GetMapping(value = "/dlp/{user}")
+    public List<dlp> getDLPPols(@PathVariable String user) {
+        return dlpREP.findByUser(user);
     }
 
-    @PostMapping(value = "/save/dlp")
-    public String saveDLP(@RequestBody dlp policy){
-        dlpREP.save(policy);
-        return "Saved....";
+    @PostMapping(value = "/dlp/post")
+    public dlp saveDLP(@RequestBody dlp policy){
+        return dlpREP.save(policy);
     }
 
-    @PutMapping(value = "/update/dlp/{id}")
+    @PutMapping(value = "/dlp/put/{id}")
     public String updateDLP(@PathVariable long id, @RequestBody dlp policy){
         dlp updatedlp = dlpREP.findById(id).get();
         updatedlp.setStatus(policy.getStatus());
         updatedlp.setName(policy.getName());
         updatedlp.setLabel(policy.getLabel());
-        updatedlp.setDLP_Engine(policy.getDLP_Engine());
-        updatedlp.setFile_Type(policy.getFile_Type());
+        updatedlp.setDlpEngine(policy.getDlpEngine());
+        updatedlp.setFileType(policy.getFileType());
         updatedlp.setUser(policy.getUser());
         dlpREP.save(updatedlp);
         return "Updated....";
     }
 
-    @DeleteMapping(value = "/delete/dlp/{id}")
+    @DeleteMapping(value = "/dlp/delete/{id}")
     public String deleteDLP(@PathVariable long id){
         dlp deleteDLP = dlpREP.findById(id).get();
         dlpREP.delete(deleteDLP);

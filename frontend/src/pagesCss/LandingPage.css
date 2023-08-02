@@ -1,0 +1,58 @@
+.welcome h1 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    white-space: nowrap;
+}
+
+.welcome {
+    width: 300px;
+    white-space: nowrap;
+}
+
+.links {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display:grid;
+    width: 100%;
+    margin-left: -10%;
+
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.links button {
+    height: 280px;
+    width: 100%;
+    background-color: lightgray;
+    text-decoration: none;
+    border-radius: 3%;
+    border-color: lightgray;
+    border-width: 2px;
+    border-style: solid;
+    
+}
+
+.links button:hover {
+    background-color: rgb(237, 233, 233);
+    width: 95%;
+    height: 270px;
+    margin-left: 2.5%;
+    border-color: #009CAD; 
+    cursor: pointer;
+}
+
+.links button h2 {
+    top: 0px;
+}

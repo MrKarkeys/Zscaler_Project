@@ -9,7 +9,7 @@ public class dlp {
     private long id;
 
     @Column
-    private boolean status;
+    private String status;
 
     @Column
     private String name;
@@ -18,50 +18,69 @@ public class dlp {
     private String label;
 
     @Column
-    private String DLP_Engine;
+    private String dlpEngine;
 
     @Column
-    private String File_Type;
+    private String fileType;
 
     @Column
     private String user;
 
-    public boolean getStatus(){
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
         return status;
     }
-    public String getName(){
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getName() {
         return name;
     }
-    public String getLabel(){
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLabel() {
         return label;
     }
-    public String getDLP_Engine(){
-        return DLP_Engine;
+
+    public void setLabel(String label) {
+        this.label = label;
     }
-    public String getFile_Type(){
-        return File_Type;
+
+    public String getDlpEngine() {
+        return dlpEngine;
     }
-    public String getUser(){
+
+    public void setDlpEngine(String dlpEngine) {
+        this.dlpEngine = dlpEngine;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+
+    public String getUser() {
         return user;
     }
 
-    public void setStatus(boolean status){
-        this.status = status;
-    } 
-    public void setName(String name){
-        this.name = name;
-    } 
-    public void setLabel(String label){
-        this.label = label;
-    } 
-    public void setDLP_Engine(String DLP_Engine){
-        this.DLP_Engine = DLP_Engine;
-    } 
-    public void setFile_Type(String File_Type){
-        this.File_Type = File_Type;
-    } 
-    public void setUser(String user){
+    public void setUser(String user) {
         this.user = user;
-    } 
+    }
 
+    
 }

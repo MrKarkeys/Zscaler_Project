@@ -2,7 +2,6 @@ package com.deveng.projectmanager.controller;
 
 import com.deveng.projectmanager.repository.malrepo;
 import com.deveng.projectmanager.model.mal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,24 +12,28 @@ public class mal_control {
     @Autowired
     private malrepo malREP;
 
-    @GetMapping(value = "/get/malware")
-    public List<mal> getMal(){
-        return malREP.findAll();
+    // @GetMapping(value = "/malware")
+    // public List<mal> getMal(){
+    //     return malREP.findAll();
+    // }
+
+    @GetMapping(value = "/malware/{user}")
+    public List<mal> getMal(@PathVariable String user) {
+        return malREP.findByUser(user);
     }
 
-   @PostMapping(value = "/save/malware")
-    public String saveFirewall(@RequestBody mal policy){
-        malREP.save(policy);
-        return "Saved....";
+   @PostMapping(value = "/malware/post")
+    public mal saveFirewall(@RequestBody mal policy){
+        return malREP.save(policy);
     }
     
-    @PutMapping(value = "/update/malware/{id}")
-    public String updatemal(@PathVariable long id, @RequestBody mal policy){
-        mal updatePolicy = malREP.findById(id).get();
-        updatePolicy.setInbound_Traffic(policy.getInbound_Traffic());
-        updatePolicy.setOutbound_Traffic(policy.getOutbound_Traffic());
-        updatePolicy.setHttp(policy.getHttp());
-        updatePolicy.setFtp(policy.getFtp());
+    @PutMapping(value = "/malware/put/{user}")
+    public String updatemal(@PathVariable String user, @RequestBody mal policy){
+        mal updatePolicy = malREP.findByUser(user).get(0);
+        updatePolicy.setInboundTraffic(policy.isInboundTraffic());
+        updatePolicy.setOutboundTraffic(policy.isOutboundTraffic());
+        updatePolicy.setHttp(policy.isHttp());
+        updatePolicy.setFtp(policy.isFtp());
         malREP.save(updatePolicy);
         return "Updated....";
     }

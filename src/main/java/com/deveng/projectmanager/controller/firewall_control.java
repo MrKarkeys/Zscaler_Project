@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+
 @RestController
 public class firewall_control {
     @Autowired
@@ -14,9 +15,21 @@ public class firewall_control {
 
     // "/get/firewall" is the api endpoint
     // 
-    @GetMapping(value = "/get/firewall")
-    public List<firewall> getFirewallPols(){
-        return firewallREP.findAll();
+
+    // @GetMapping(value="/info/firewall/{user}")
+    // public long countByUser(@PathVariable String user){
+    //     long count = firewallREP.countByUser(user);
+    //     return count;
+    // }
+    
+    // @GetMapping(value = "/get/firewall")
+    // public List<firewall> getFirewallPols(){
+    //     return firewallREP.findAll();
+    // }
+
+    @GetMapping(value = "/firewall/{user}")
+    public List<firewall> getFirewallPols(@PathVariable String user) {
+        return firewallREP.findByUser(user);
     }
 
     /*
@@ -27,28 +40,30 @@ public class firewall_control {
     */
     
     //.save will generate an ID  
-    @PostMapping(value = "/save/firewall")
-    public String saveFirewall(@RequestBody firewall policy){
-        firewallREP.save(policy);
-        return "Saved....";
+    @PostMapping(value = "/firewall/post")
+    public firewall saveFirewall(@RequestBody firewall policy){
+        return firewallREP.save(policy);
     }
     
     //"/update/firewall/{id}" is the api endpoint
-    @PutMapping(value = "/update/firewall/{id}")
+    @PutMapping(value = "/firewall/put/{id}")
     public String updateFirewall(@PathVariable long id, @RequestBody firewall policy){
         firewall updatefirewall = firewallREP.findById(id).get();
         updatefirewall.setName(policy.getName());
         updatefirewall.setLabel(policy.getLabel());
         updatefirewall.setDepartment(policy.getDepartment());
         updatefirewall.setStatus(policy.getStatus());
+        updatefirewall.setUser(policy.getUser());
         firewallREP.save(updatefirewall);
         return "Updated....";
     }
 
-    @DeleteMapping(value = "/delete/firewall/{id}")
+    @DeleteMapping(value = "/firewall/delete/{id}")
     public String deleteFirewall(@PathVariable long id){
         firewall deleteFirewall = firewallREP.findById(id).get();
         firewallREP.delete(deleteFirewall);
         return "Deleted " + id;
     }
+    
+    
 }

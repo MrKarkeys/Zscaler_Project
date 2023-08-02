@@ -18,7 +18,7 @@ public class firewall {
     private String department;
 
     @Column
-    private boolean status;
+    private String status;
 
     @Column
     private String user;
@@ -35,7 +35,7 @@ public class firewall {
     public String getDepartment(){
         return department;
     }
-    public boolean getStatus(){
+    public String getStatus(){
         return status;
     }
     public String getUser(){
@@ -54,7 +54,7 @@ public class firewall {
     public void setDepartment(String department){
         this.department = department;
     } 
-    public void setStatus(boolean status){
+    public void setStatus(String status){
         this.status = status;
     } 
     public void setUser(String user){

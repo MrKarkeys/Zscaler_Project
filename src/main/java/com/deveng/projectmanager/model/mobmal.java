@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class mobmal {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -13,43 +13,64 @@ public class mobmal {
     private boolean vulnerability;
 
     @Column
-    private boolean usercred;
+    private boolean userCred;
 
     @Column
-    private boolean idinfo;
+    private boolean idInfo;
 
     @Column
-    private boolean locinfo;
+    private boolean locInfo;
 
-    public long getId(){
+    @Column
+    private String user;
+
+
+    public long getId() {
         return id;
     }
-    public boolean getVulnerability(){
-        return vulnerability;
-    }
-    public boolean getUserCred(){
-        return usercred;
-    }
-    public boolean getIdInfo(){
-        return idinfo;
-    }
-    public boolean getLocInfo(){
-        return locinfo;
-    }
 
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
-    public void setVulnerability(boolean vulnerability){
+
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public boolean isVulnerability() {
+        return vulnerability;
+    }
+
+    public void setVulnerability(boolean vulnerability) {
         this.vulnerability = vulnerability;
     }
-    public void setUserCred(boolean usercred){
-        this.usercred = usercred;
+
+    public boolean isUserCred() {
+        return userCred;
     }
-    public void setIdInfo(boolean idinfo){
-        this.idinfo = idinfo;
+
+    public void setUserCred(boolean userCred) {
+        this.userCred = userCred;
     }
-    public void setLocInfo(boolean locinfo){
-        this.locinfo = locinfo;
+
+    public boolean isIdInfo() {
+        return idInfo;
+    }
+
+    public void setIdInfo(boolean idInfo) {
+        this.idInfo = idInfo;
+    }
+
+    public boolean isLocInfo() {
+        return locInfo;
+    }
+
+    public String getUser(){
+        return user;
+    }
+
+    public void setLocInfo(boolean locInfo) {
+        this.locInfo = locInfo;
     }
 }

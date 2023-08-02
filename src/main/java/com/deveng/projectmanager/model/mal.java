@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 
 @Entity
 public class mal {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
-    private boolean inbound_traffic;
+    private boolean inboundTraffic;
 
     @Column
-    private boolean outbound_traffic;
+    private boolean outboundTraffic;
 
     @Column
     private boolean http;
@@ -21,35 +21,55 @@ public class mal {
     @Column
     private boolean ftp;
 
-    public long getId(){
+    @Column
+    private String user;
+
+    public long getId() {
         return id;
     }
-    public boolean getInbound_Traffic(){
-        return inbound_traffic;
+
+    public void setId(long id) {
+        this.id = id;
     }
-    public boolean getOutbound_Traffic(){
-        return outbound_traffic;
+    
+    public String getUser() {
+        return user;
     }
-    public boolean getHttp(){
+
+    public boolean isInboundTraffic() {
+        return inboundTraffic;
+    }
+
+    public void setInboundTraffic(boolean inboundTraffic) {
+        this.inboundTraffic = inboundTraffic;
+    }
+
+    public boolean isOutboundTraffic() {
+        return outboundTraffic;
+    }
+
+    public void setOutboundTraffic(boolean outboundTraffic) {
+        this.outboundTraffic = outboundTraffic;
+    }
+
+    public boolean isHttp() {
         return http;
     }
-    public boolean getFtp(){
+
+    public void setHttp(boolean http) {
+        this.http = http;
+    }
+
+    public boolean isFtp() {
         return ftp;
     }
 
-    public void setId(long id){
-        this.id = id;
-    }
-    public void setInbound_Traffic(boolean inbound_traffic){
-        this.inbound_traffic = inbound_traffic;
-    }
-    public void setOutbound_Traffic(boolean outbound_traffic){
-        this.outbound_traffic = outbound_traffic;
-    }
-    public void setHttp(boolean http){
-        this.http = http;
-    }
-    public void setFtp(boolean ftp){
+    public void setFtp(boolean ftp) {
         this.ftp = ftp;
+    }    
+
+
+    public void setUser(String user){
+        this.user = user;
     }
 }
