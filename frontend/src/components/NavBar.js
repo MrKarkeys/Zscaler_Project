@@ -1,3 +1,4 @@
+import React from 'react'
 import logo from './realzs.svg'
 import { Link } from "react-router-dom"
 

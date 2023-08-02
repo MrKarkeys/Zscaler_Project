@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react"
 import DataTable from "../components/DataTable"
 import NavBar from '../components/NavBar'

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from "react"
 import EditCell from "./EditCell";
 import { useAuth } from "../contexts/AuthContext"
