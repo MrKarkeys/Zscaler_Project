@@ -2,13 +2,13 @@ import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyAi9qAjNkiShD6oHvj0dSx8YsDm694l3UE",
-  authDomain: "zsauth-7201b.firebaseapp.com",
-  projectId: "zsauth-7201b",
-  storageBucket: "zsauth-7201b.appspot.com",
-  messagingSenderId: "808929362559",
-  appId: "1:808929362559:web:f6944da96962fb927bf54a",
-  measurementId: "G-F0XVC0VD32"
+  apiKey: "AIzaSyDSRlM02eM75X_e6cnNwDcTmsQrAfxEBzI",
+  authDomain: "zscaler-bafea.firebaseapp.com",
+  projectId: "zscaler-bafea",
+  storageBucket: "zscaler-bafea.appspot.com",
+  messagingSenderId: "707133882331",
+  appId: "1:707133882331:web:3c9c88f2d3825f0e0571fe",
+  measurementId: "G-Z2C7G843HF"
 })
 
 export const auth = app.auth()
